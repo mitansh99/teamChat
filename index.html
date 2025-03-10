@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeamChat - Free Text-Based Team Collaboration Platform</title>
+  <meta name="description" content="TeamChat is a free text-based chat application for team collaboration. Create teams, chat instantly, and boost your productivity with our simple and intuitive platform.">
+  <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
+  <meta name="keywords" content="team chat, real-time messaging, collaboration tool, team communication, free chat">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Header -->
+  <header class="py-6">
+    <div class="container mx-auto px-4">
+      <nav class="flex justify-between items-center">
+        <div class="flex items-center font-bold text-xl">
+          TeamChat<span class="h-2 w-2 bg-orange-500 rounded-full ml-1"></span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#features" class="hover:text-orange-500 transition-colors">Features</a>
+          <a href="#how-it-works" class="hover:text-orange-500 transition-colors">How It Works</a>
+          <a href="#free-version" class="hover:text-orange-500 transition-colors">Free Forever</a>
+        </div>
+        <div class="flex">
+          <button onclick="window.location.pathname = 'chat.html'" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded transition-colors">Let's Chat</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="py-12 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-12 md:mb-0 md:w-1/2">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Team Communication <span class="text-orange-500">Simplified</span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-8 max-w-md">
+              Create teams, chat in real-time, and collaborate effectively with our completely free text-based messaging platform.
+            </p>
+            <div class="flex space-x-4">
+              <button onclick="window.location.pathname = 'chat.html'" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded transition-colors">Create Team</button>
+              <button onclick="window.location.pathname = 'chat.html'" class="bg-gray-800 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded transition-colors">Start Chat</button>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 max-w-md mx-auto">
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <div class="flex items-center p-4 border-b border-gray-700">
+                <div class="h-3 w-3 bg-orange-500 rounded-full mr-2"></div>
+                <span>Marketing Team</span>
+              </div>
+              <div class="p-4">
+                <div class="flex mb-4">
+                  <div class="h-8 w-8 bg-gray-700 rounded-full flex-shrink-0"></div>
+                  <div class="bg-gray-700 rounded-lg px-4 py-3 ml-3 max-w-xs">
+                    <p>Hey team, any updates on the new campaign?</p>
+                  </div>
+                </div>
+                <div class="flex justify-end mb-4">
+                  <div class="bg-orange-500 rounded-lg px-4 py-3 mr-3 max-w-xs">
+                    <p>Just finished the draft. Let's discuss in the meeting!</p>
+                  </div>
+                  <div class="h-8 w-8 bg-gray-700 rounded-full flex-shrink-0"></div>
+                </div>
+              </div>
+              <div class="flex p-4 border-t border-gray-700">
+                <input type="text" placeholder="Type a message..." class="bg-gray-700 text-white px-4 py-3 rounded-l-md flex-1 focus:outline-none">
+                <button class="bg-orange-500 px-4 py-3 rounded-r-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-12 md:py-20 bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+          Why Choose <span class="text-orange-500">TeamChat</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature Cards (Repeated for each feature) -->
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Team Creation</h3>
+            <p class="text-gray-300">Easily create and manage multiple teams for different projects or departments.</p>
+          </div>
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Real-Time Messaging</h3>
+            <p class="text-gray-300">Communicate instantly with team members without delays or refreshing.</p>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Secure Communication</h3>
+            <p class="text-gray-300">Private conversations for your team with basic security measures.</p>
+          </div>
+          
+          <!-- Feature 4 -->
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Simple & Focused</h3>
+            <p class="text-gray-300">Text-only communication keeps things simple and focused on collaboration.</p>
+          </div>
+          
+          <!-- Feature 5 -->
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Notifications</h3>
+            <p class="text-gray-300">Stay updated with message notifications for important conversations.</p>
+          </div>
+          
+          <!-- Feature 6 -->
+          <div class="feature-card bg-gray-900 p-6 rounded-lg hover:translate-y-[-5px] transition-transform">
+            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">No Distractions</h3>
+            <p class="text-gray-300">Focus on what matters with a clean, distraction-free interface.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-12 md:py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+          How <span class="text-orange-500">TeamChat</span> Works
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Steps (Repeated for each step) -->
+          <div class="text-center">
+            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+            <h3 class="text-xl font-semibold mb-2">Create Your Team</h3>
+            <p class="text-gray-300">Set up a new team in seconds and invite your colleagues with a simple link.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+            <h3 class="text-xl font-semibold mb-2">Start Chatting</h3>
+            <p class="text-gray-300">Begin real-time text conversations immediately with your team members.</p>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+            <h3 class="text-xl font-semibold mb-2">Collaborate Effectively</h3>
+            <p class="text-gray-300">Boost productivity with organized channels and searchable message history.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Version Section -->
+    <section id="free-version" class="py-12 md:py-20 bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+          Always <span class="text-orange-500">Free</span> for Everyone
+        </h2>
+        <div class="bg-gray-900 rounded-lg border-2 border-orange-500 max-w-lg mx-auto p-8 text-center">
+          <h3 class="text-3xl font-bold mb-4">TeamChat</h3>
+          <div class="inline-block bg-orange-500 text-white px-2 py-1 rounded-lg font-medium mb-6">100% Free</div>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center justify-center">
+              <span class="text-orange-500 mr-2">✓</span>
+              Unlimited teams and channels
+            </li>
+            <!-- Repeat for other features -->
+          </ul>
+          <button onclick="window.location.pathname = 'chat.html'" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded transition-colors">Create team </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta-section" class="py-12 md:py-20 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Team Communication?</h2>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Join thousands of teams that trust TeamChat for their text-based collaboration needs.</p>
+        <button onclick="window.location.pathname = 'chat.html'" class="bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg transition-colors">Get Started For Free</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <div class="flex items-center font-bold text-xl mb-4">
+            TeamChat<span class="h-2 w-2 bg-orange-500 rounded-full ml-1"></span>
+          </div>
+          <p class="text-gray-300 mb-4">Simplifying team communication with free text messaging.</p>
+          <div class="flex space-x-4">
+            <!-- Social Icons -->
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Product</h3>
+          <ul class="space-y-2">
+            <li><a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a></li>
+            <!-- Repeat for other links -->
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Company</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+            <!-- Repeat for other links -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Animation
+    gsap.from("#hero h1", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.5,
+      ease: "power3.out",
+    });
+
+    gsap.from("#hero p", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.8,
+      ease: "power3.out",
+    });
+
+    gsap.from("#hero button", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+
+    gsap.from("#hero .bg-gray-800", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1.2,
+      ease: "power3.out",
+    });
+
+    // Features Section Animation
+    gsap.from(".feature-card", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#features",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // How It Works Section Animation
+    gsap.from("#how-it-works .text-center", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#how-it-works",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // Free Version Section Animation
+    gsap.from("#free-version .bg-gray-900", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#free-version",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // CTA Section Animation
+    gsap.from("#cta-section h2", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#cta-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.from("#cta-section p", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.3,
+      scrollTrigger: {
+        trigger: "#cta-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.from("#cta-section button", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.6,
+      scrollTrigger: {
+        trigger: "#cta-section",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+  </script>
+</body>
+</html>

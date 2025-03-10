@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
+    <title>TeamChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff7f11;
+            --secondary-color: #1e1e1e;
+            --text-color: #ffffff;
+        }
+    </style>
+</head>
+<body class=" relative bg-gray-900 text-white">
+    <div id="login" class=" absolute z-10 h-screen w-screen flex items-center justify-center backdrop-blur-md flex-col bg-gray-900 bg-opacity-30 mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center mb-6">Real-Time Chat</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full">
+                <h2 class="text-xl font-semibold mb-4">Create a Team</h2>
+                <input autocomplete="off" id="HostName" type="text" placeholder="Enter your name" class="w-full p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white mb-4">
+                <button class="w-full bg-orange-500 p-3 rounded-lg hover:bg-orange-600 transition" onclick="createTeam()">Create Team</button>
+            </div>
+            
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full">
+                <h2 class="text-xl font-semibold mb-4">Join a Team</h2>
+                <input autocomplete="off" id="joineeName" type="text" placeholder="Enter your name" class="w-full p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white mb-4">
+                <input autocomplete="off" type="text" id="teamCode" placeholder="Enter team code" class="w-full p-3 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 text-white mb-4">
+                <button class="w-full bg-orange-500 p-3 rounded-lg hover:bg-orange-600 transition" onclick="connectToPeer(document.getElementById('teamCode').value); ">Join Team</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-1/6 bg-gray-800 p-4 hidden md:block">
+            <h2 class="text-xl font-bold mb-4 text-white">Team Members</h2>
+            <ul id="teamMembers">
+                <!-- Members will be added dynamically -->
+            </ul>
+        </div>
+        
+        <!-- Chat Window -->
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <div class="backdrop-blur-md p-4 text-white text-center font-bold text-lg">
+                Team Chat
+                <span id="peerId" class="block text-sm text-orange-400"></span>
+            </div>
+            
+            <!-- Messages -->
+            <div id="chatBox" class="flex-1 overflow-y-auto p-4 space-y-4">
+                <!-- Messages will be added dynamically -->
+            </div>
+            
+            <!-- Input Field -->
+            <div class="p-4 flex">
+                <input type="text" id="messageInput" placeholder="Type a message..." 
+                    class="flex-1 p-2 rounded bg-gray-700 text-white outline-none">
+                <button class="ml-2 bg-orange-500 px-4 py-2 rounded " onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
