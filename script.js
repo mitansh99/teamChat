@@ -15,14 +15,11 @@ peer.on("connection", (conn) => {
         console.log("New connection from:", conn.peer);
         connections.push(conn);
 
-        // Send current team list & user's name to new user
         conn.send({ type: "team-list", members: teamMembers });
         conn.send({ type: "new-user", id: peer.id, name: userName });
 
-        // Notify other members about new user
         broadcast({ type: "new-user", id: peer.id, name: userName }, conn);
 
-        // Listen for messages
         conn.on("data", (msg) => handleIncomingMessage(msg, conn));
     });
 });
@@ -35,7 +32,6 @@ function handleIncomingMessage(msg, conn) {
             addTeamMember(msg.id, msg.name);
             teamMembers[msg.id] = msg.name;
 
-            // Broadcast the new user to all others
             broadcast(msg, conn);
         }
     } else if (msg.type === "team-list") {
@@ -48,11 +44,11 @@ function handleIncomingMessage(msg, conn) {
         }
     } else if (msg.type === "message") {
         displayMessage(`${msg.name}: ${msg.text}`, false);
-        broadcast(msg, conn); // Ensure message is sent to all
+        broadcast(msg, conn); 
     }
 }
 
-// Broadcast message to all connected peers except sender
+
 function broadcast(msg, excludeConn = null) {
     connections.forEach(conn => {
         if (conn !== excludeConn) {
@@ -89,18 +85,16 @@ function connectToPeer(peerId) {
         document.getElementById("login").style.display = "none";
         document.getElementById("peerId").innerText = `Your ID: ${peer.id}`;
 
-        // Send new user details
         conn.send({ type: "new-user", id: peer.id, name: userName });
 
         addTeamMember(peer.id, userName);
         teamMembers[peer.id] = userName;
 
-        // Listen for messages
         conn.on("data", (msg) => handleIncomingMessage(msg, conn));
     });
 }
 
-// Send a message to all connected peers
+// Send a message to all connected Users
 function sendMessage() {
     const message = document.getElementById("messageInput").value;
     if (!connections.length) {
@@ -128,7 +122,7 @@ function displayMessage(msg, isSender) {
 
 // Add team members dynamically
 function addTeamMember(peerId, name ) {
-    if (teamMembers[peerId]) return; // Prevent duplicate entries
+    if (teamMembers[peerId]) return; 
 
     let teamList = document.getElementById("teamMembers");
     let member = document.createElement("li");
